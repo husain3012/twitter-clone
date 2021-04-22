@@ -1,13 +1,92 @@
 :root {
-    --blue: #1DA1F2;
-    --black: #14171A;
-    --dark-grey: #657786;
-    --grey: #AAB8C2;
-    --light-grey: #E1E8ED;
-    --extra-light-grey: #F5F8FA;
-    --white: #ffffff;
-  }
+  --blue: #1da1f2;
+  --black: #14171a;
+  --dark-grey: #657786;
+  --grey: #aab8c2;
+  --light-grey: #e1e8ed;
+  --extra-light-grey: #f5f8fa;
+  --white: #ffffff;
+}
+body {
+  font-family: "Open Sans";
+}
+*:focus {
+  outline: none;
+}
+.centered {
+  display: grid;
+  place-items: center;
+}
 
-  .flex{
-      display: flex
-  }
+/* nav and navbars */
+.nav {
+  background-color: var(--white);
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: var(--grey);
+}
+.navbar-brand {
+  font-weight: bolder;
+  color: var(--black);
+}
+/* ------------------- */
+
+/* profile picture */
+a.profile-picture {
+  background-image: url("images/profile-picture.png");
+}
+/* ---------------- */
+
+/* post box css */
+.postbox .profile-picture {
+  width: 3rem;
+  border-radius: 100%;
+  transition: 0.2s;
+}
+
+.postbox .profile-picture:hover {
+  filter: brightness(75%);
+  transition: 0.2s;
+}
+
+.postbox {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  margin: 1rem 0;
+  background-color: var(--white);
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: var(--light-grey);
+}
+
+.post-input {
+  border-style: none;
+}
+.postbox .photo-holder {
+  align-items: stretch;
+  flex-flow: column;
+  height: 100%;
+  background-color: #1da1f2;
+}
+
+.attachments button {
+  font-size: 1.5rem;
+  border-style: none;
+  background-color: var(--white);
+  color: var(--blue);
+}
+.attachments button:hover {
+  text-shadow: 5px black;
+}
+
+
+/* ---------------- */
+.feed {
+  background-color: var(--light-grey);
+  width: clamp(30ch, 45ch, 45%);
+  height: 10000px;
+  border-style: none solid;
+  border-width: 1px;
+  border-color: var(--grey);
+}
