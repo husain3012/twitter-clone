@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #grid {
+        display: grid; 
+        grid-template-columns: 280px auto 300px; 
+        grid-gap: 5px; 
+        background-color: darkgray;
+    }
+    .navIcon {
+        float: left;
+        margin-right: 20px;
+        width: 40px;
+    }
+    .navMenuItem {
+        width: fit-content;
+        border: solid white;
+        margin: 10px;
+        padding: 5px;
+    }
+    .navMenuItem:hover {
+        background-color: rgb(233, 242, 252);
+        border-radius: 20px;
+        color: cyan;
+    }
+    .navBar {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        background-color: white;
+        height: 100vh;
+    }
+    .active {
+        color: steelblue;
+    }
+    #tweetButton {
+        width: 220px;
+        background-color: #3498DB;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        border-radius: 15px;
+    }
+    #profile {
+        display: grid;
+        grid-template-columns: 60px auto 30px;
+        margin-top: 20vh;
+        font-size: 15px;
+        padding: 30px;
+    }
+    #DP {
+        height: 45px;
+        width: 45px;
+        border: solid white;
+        border-radius: 30px;
+    }
+    #userName {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        line-height: 0px;
+        color: gray;
+        font-weight: initial;
+    }
+    #name {
+        line-height: 0px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+</style>
+<body>
+    <div id="grid">
+        <div class="navBar">
+            <div class="navMenuItem active"><span class="navIcon">舎</span><span class="navText">Home</span></div>
+            <div class="navMenuItem"><span class="navIcon">#</span><span class="navText">Explore</span></div>
+            <div class="navMenuItem"><span class="navIcon">!</span><span class="navText">Notifications</span></div>
+            <div class="navMenuItem"><span class="navIcon">三</span><span class="navText">Messages</span></div>
+            <div class="navMenuItem"><span class="navIcon">三</span><span class="navText">Lists</span></div>
+            <div class="navMenuItem"><span class="navIcon">三</span><span class="navText">Topics</span></div>
+            <div class="navMenuItem"><span class="navIcon">(>_<)</span><span class="navText">Profile</span></div>
+            <div class="navMenuItem"><span class="navIcon">⁂</span><span class="navText">More</span></div>
+            <button id="tweetButton">Tweet</button>
+            <div id="profile">
+                <img src="Images/TahirDP.png" alt="DP" id="DP">
+                <span id="name">Tahir Reyaz</span>
+                <span id="userName">@user_name</span>
+                <span>...</span>
+            </div>
+        </div>
+        <div style="background-color: white;">Feed</div>
+        <div style="background-color: white;">Trending</div>
+    </div>
+</body>
+</html>
