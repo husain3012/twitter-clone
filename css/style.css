@@ -23,7 +23,6 @@ body > * {
   outline: none;
 }
 
-
 /* sidebar */
 
 .bi {
@@ -44,17 +43,17 @@ body > * {
   height: -webkit-fill-available;
   margin-left: 15%;
 }
-.sidebar .nav-link{
+.sidebar .nav-link {
   margin-left: 3rem;
 }
 .fa-twitter {
   color: var(--blue);
 }
-.brand{
+.brand {
   margin-left: 3rem;
   padding: 0 1rem;
 }
-.btn.btn-primary{
+.btn.btn-primary {
   background-color: var(--blue);
   border: none;
   border-radius: 20px;
@@ -69,36 +68,69 @@ body > * {
   margin: 0 auto;
   width: 66ch;
   height: 2000px;
- 
 }
 
-.feed .nav{
+.feed .nav {
   background-color: var(--white);
   padding: 1rem;
   border-style: none none solid none;
   border-width: 1px;
   border-color: var(--light-grey);
 }
-.postbox{
+#postbox {
   padding: 1rem;
 }
-.photo-holder{
+.photo-holder {
   height: max-content;
   text-align: center;
 }
-.profile-photo{
+.profile-photo {
   width: 45px;
   border-radius: 100%;
   transition: 0.2s;
 }
-.profile-photo:hover{
-  filter: brightness(0.90);
+.profile-photo:hover {
+  filter: brightness(0.9);
   transition: 0.2s;
 }
-.post-input{
-  padding: 0.5rem;
+.post-input {
+  padding: 0.5rem 1rem;
   border-style: none none solid;
   border-width: 1px;
   border-color: var(--light-grey);
-  
+}
+
+.post-methods{
+  padding: 0.5rem;
+}
+.attachments .btn{
+  color: var(--blue);
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+
+
+/* tweet posts css */
+.tweet-header .profile-name{
+  font-weight: bolder;
+}
+.tweet-header .username{
+  color: grey;
+}
+.tweet-feed{
+  padding: 1rem;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: var(--light-grey);
+  transition: 0.2s;
+}
+.tweet-feed:hover{
+  background-color: var(--extra-light-grey);
+  transition: 0.2s;
+}
+.tweet{
+  padding: 0 1rem;
+}
+.tweet-feed .reactions .btn {
+  margin: 0 1.5rem;
 }
