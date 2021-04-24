@@ -54,8 +54,13 @@ body > * {
   margin-left: 3rem;
   padding: 0 1rem;
 }
+.btn.btn-primary{
+  background-color: var(--blue);
+  border: none;
+  border-radius: 20px;
+}
 
-/* navbar end */
+/* sidebar end */
 
 .feed {
   border-style: none solid;
