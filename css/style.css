@@ -7,86 +7,236 @@
   --extra-light-grey: #f5f8fa;
   --white: #ffffff;
 }
-body {
-  font-family: "Open Sans";
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  /* height: 100vh; */
+
+  overflow-x: auto;
+  /* overflow-y: hidden; */
 }
-*:focus {
+body > * {
+  flex-shrink: 0;
+}
+[contenteditable="true"]:focus {
   outline: none;
 }
-.centered {
-  display: grid;
-  place-items: center;
+
+/* sidebar */
+
+.bi {
+  vertical-align: -0.125em;
+  pointer-events: none;
+  fill: currentColor;
 }
 
-/* nav and navbars */
-.nav {
-  background-color: var(--white);
-  border-style: none none solid;
+.dropdown-toggle {
+  outline: 0;
+}
+
+.scrollarea {
+  overflow-y: auto;
+}
+
+.sidebar {
+  height: -webkit-fill-available;
+  margin-left: 13%;
+}
+.sidebar .nav-link {
+  margin-left: 3rem;
+}
+.fa-twitter {
+  color: var(--blue);
+}
+.brand {
+  margin-left: 3rem;
+  padding: 0 1rem;
+}
+.btn.btn-primary {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 20px;
+}
+
+/* sidebar end */
+
+.feed {
+  border-style: none solid;
   border-width: 1px;
-  border-color: var(--grey);
+  border-color: var(--light-grey);
+  margin: 0 auto;
+  width: 66ch;
 }
-.navbar-brand {
-  font-weight: bolder;
-  color: var(--black);
-}
-/* ------------------- */
 
-/* profile picture */
-a.profile-picture {
-  background-image: url("images/profile-picture.png");
+.feed .nav {
+  background-color: var(--white);
+  padding: 1rem;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: var(--light-grey);
 }
-/* ---------------- */
-
-/* post box css */
-.postbox .profile-picture {
-  width: 3rem;
+#postbox {
+  padding: 1rem;
+}
+.photo-holder {
+  height: max-content;
+  text-align: center;
+}
+.profile-photo {
+  width: 45px;
   border-radius: 100%;
   transition: 0.2s;
 }
-
-.postbox .profile-picture:hover {
-  filter: brightness(75%);
+.profile-photo:hover {
+  filter: brightness(0.9);
   transition: 0.2s;
 }
-
-.postbox {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
-  margin: 1rem 0;
-  background-color: var(--white);
+.post-input {
+  padding: 0.5rem 1rem;
   border-style: none none solid;
   border-width: 1px;
   border-color: var(--light-grey);
 }
-
-.post-input {
-  border-style: none;
+.placeholder {
+  color: var(--dark-grey);
 }
-.postbox .photo-holder {
-  align-items: stretch;
-  flex-flow: column;
-  height: 100%;
-  background-color: #1da1f2;
+.post-methods {
+  padding: 0.5rem;
 }
-
-.attachments button {
-  font-size: 1.5rem;
-  border-style: none;
-  background-color: var(--white);
+.attachments .btn {
   color: var(--blue);
-}
-.attachments button:hover {
-  text-shadow: 5px black;
+  font-size: 1.3rem;
+  padding: 0.5rem;
 }
 
+.reactions button.comment:hover {
+  color: #1da1f2;
+  text-shadow: 5px 5px #92d2fa;
+  transition: 0.2s;
+}
+.reactions button.retweet:hover {
+  color: rgba(130, 255, 130, 0.712);
+  transition: 0.2s;
+}
 
-/* ---------------- */
-.feed {
-  background-color: var(--light-grey);
-  width: clamp(30ch, 45ch, 45%);
-  height: 10000px;
-  border-style: none solid;
+.reactions button.like:hover {
+  color: rgba(230, 112, 112, 0.856);
+  transition: 0.2s;
+}
+.reactions button.share:hover {
+  color: #1da1f2;
+  transition: 0.2s;
+}
+.reactions button.liked {
+  color: rgb(230, 78, 78);
+  transition: 0.2s;
+}
+
+/* tweet posts css */
+.tweet-header .profile-name {
+  font-weight: bolder;
+}
+.tweet-header .username {
+  color: grey;
+}
+.tweet-feed {
+  padding: 1rem;
+  border-style: solid none;
   border-width: 1px;
-  border-color: var(--grey);
+  border-color: var(--light-grey);
+  transition: 0.2s;
+}
+.tweet-feed:hover {
+  background-color: var(--extra-light-grey);
+  transition: 0.2s;
+}
+.tweet {
+  padding: 0 1rem;
+}
+.tweet-feed .reactions .btn {
+  margin: 0 1.5rem;
+}
+
+/* trending section */
+.layout__right-sidebar-container {
+  position: absolute;
+  margin-left: 72%;
+}
+
+/* login-signup */
+.login-bg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png");
+  height: 95vh;
+  overflow-y: auto;
+}
+
+form.login-panel {
+  padding: 2.2rem;
+}
+
+.form input.login-field {
+  padding: 1rem;
+  border-radius: 10px;
+}
+.form input.login-field:focus {
+  border-style: solid;
+  border-color: var(--blue);
+  border-width: 2px;
+  box-shadow: none;
+}
+.form .btn-login {
+  display: flex;
+  align-items: center;
+}
+.form .btn-login button{
+  color: var(--blue);
+  border-color: var(--blue);
+  border-radius: 30px;
+  padding: 0.7rem 1.5rem;
+}
+.form .btn-login button:hover{
+  color: var(--blue);
+  background-color:#90d0f783;
+}
+
+.login-signup{
+  margin: auto 0;
+  display: flex;
+  flex-flow: column;
+ margin: 20% 2rem;
+ padding: 1rem;
+}
+
+.login-signup .happening{
+margin: 2rem 0;
+font-size: 4.5rem;
+}
+.login-signup h3{
+ 
+  font-size: 2rem;
+ 
+}
+
+.login-signup .cta-buttons{
+  margin: 1rem 0;
+}
+.login-signup .cta-buttons button{
+  margin: 1rem 0;
+  width: 30%;
+  padding: 0.5rem 0;
+}
+.login-signup button.btn-outline-primary{
+  color: var(--blue);
+  border-color: var(--blue);
+  border-radius: 30px;
+}
+.login-signup button.btn-primary{
+  border-radius: 30px;
+}
+.login-signup button.btn-outline-primary:hover{
+  background-color: rgba(134, 197, 233, 0.616);
 }

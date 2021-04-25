@@ -1,0 +1,58 @@
+.topics-to-follow{
+    background: #f5f8fa;
+    border-radius: 15px;
+}
+.topics-to-follow__block{
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6ecf0;
+    margin-top: 15px;
+    
+}
+.topics-to-follow__block:last-child{
+    border-bottom: none;
+}
+.topics-to-follow__author-slug{
+    color: #657786;
+    font-size: 15px;
+    
+}
+.topics-to-follow__author-name{
+    font-size: 15px;
+    font-weight: 700;
+    
+}.topics-to-follow__content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.topics-to-follow__heading{
+    font-size: 19px;
+    font-weight: bold;
+    color: #14171a;
+    
+}
+.topics-to-follow__button.btn{
+    border: 1px solid;
+    border-color: #1da1f2;
+    color: #1da1f2;
+    padding: 2px 5px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 15px;
+    min-width: 67px; 
+    max-height: 30px;
+}
+.topics-to-follow__button.btn:hover{
+    background: rgba(29, 161, 242, 0.1);
+    color: #1da1f2;
+
+}
+.topics-to-follow__show-more{
+    color: #1da1f2;
+    padding: 5px;
+    min-width: 67px;
+    text-align: center;
+}

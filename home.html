@@ -7,6 +7,17 @@
     <link rel="shortcut icon" href="images/icons/twitter.ico" type="image/x-icon" />
     <title>Twitter</title>
     <!-- stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/whats-happening.css" />
+    <link rel="stylesheet" href="css/who-to-follow.css" />
+    <link rel="stylesheet" href="css/topics-to-follow.css" />
+
+    <!-- bootsrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,7 +25,6 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
@@ -27,45 +37,409 @@
   </head>
 
   <body>
-    <section class="centered">
-      <div class="flex-column feed">
-        <!-- feed nav -->
-
-        <nav class="nav justify-content-between sticky-top">
-          <a class="nav-link navbar-brand">Home</a>
-
-          <a href="" class="far fa-star nav-link"></a>
-        </nav>
-
-        <!-- post box -->
-        <div class="postbox">
-            <div class="photo-holder">   <a href="#"><img class="profile-picture" src="images/profile-picture.png" alt="profile-picture" srcset="" /></a>    </div>
-            
-            
-            <div class="post-methods">
-                <div class="attachments">
-                    <button class="far fa-image"></button>
-                    <button class="fas fa-photo-video "></button>
-                    <button class="fas fa-chart-bar"></button>
-                    <button class="far fa-smile"></button>
-                    <button class="fas fa-calendar-alt"></button>
-                </div>
-                    
-            </div>
-        </div>
-
-        lorem ospawiporem ospawiporem ospawiporem ospawiporem ospawiporem ospawi orem ospawiporem ospawiporem ospawiporem ospawiporem ospawiporem ospawip orem ospawiporem ospawiporem ospawiporem
-        ospawiporem ospawipem ospawiporem ospawiporem ospawiporem ospawi orem ospawiporem ospawiporem ospawiporem ospawiporem ospawiporem ospawip orem ospawiporem ospawiporem ospawiporem ospawiporem
-        ospawip
+    <!-- sidebar -->
+    <div class="position-fixed sidebar d-flex flex-column p-3" style="width: 280px">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <h3 class="brand"><i class="fab fa-twitter"></i></h3>
+      </a>
+      <hr />
+      <ul class="nav flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">
+            <i class="fas fa-house-user"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="fas fa-hashtag"></i>
+            Explore
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="far fa-bell"></i>
+            Notifications
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="far fa-envelope"></i>
+            Messages
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="far fa-bookmark"></i>
+            Bookmarks
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="far fa-list-alt"></i>
+            Lists
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="far fa-user"></i>
+            Profile
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <i class="fas fa-ellipsis-h"></i>
+            More
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-dark">
+            <button type="button" class="btn btn-primary">Tweet</button>
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <div class="dropdown">
+        <a
+          href="#"
+          class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+          id="dropdownUser2"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src="images/profile-picture.png" alt="mdo" width="32" height="32" class="rounded-circle me-2" />
+          <strong>Elon Tusk</strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
       </div>
-    </section>
+    </div>
+
+    <!--end sidebar -->
+
+    <!-- feed -->
+    <div class="flex">
+      <div class="feed">
+        <ul class="nav sticky-top justify-content-between">
+          <li>Home</li>
+          <li><i class="far fa-star"></i></li>
+        </ul>
+  
+        <div id="postbox">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/profile-picture.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="post-input placeholder" contenteditable="true">What's Happening?</div>
+              <div class="post-methods row">
+                <div class="attachments col-11">
+                  <button type="button" class="btn far fa-image"></button>
+                  <button type="button" class="btn fas fa-photo-video"></button>
+                  <button type="button" class="btn fas fa-chart-bar"></button>
+                  <button type="button" class="btn far fa-smile"></button>
+                  <button type="button" class="btn fas fa-calendar-alt"></button>
+                </div>
+                <div class="post-tweet col-1"><button class="btn btn-primary" type="button">Tweet</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="tweet-feed">
+          <div class="row">
+            <div class="photo-holder col-1"><img src="images/kangana-raunat.png" class="profile-photo" alt="" /></div>
+            <div class="col-10">
+              <div class="tweet">
+                <div class="tweet-header">
+                  <span class="profile-name">Kangana Raunat</span>
+                  <span class="username">@kangaroo</span>
+                </div>
+  
+                <p>
+                  Look now you will know why I never supported Gajni, and blasted all those who danced for his victory in
+                  India but remember its is not them who won’t get the vaccine it is you who will suffer, remember to
+                  raise voice next time when they stab India in the like 🙏
+                </p>
+                <div class="reactions">
+                  <button type="button" class="btn comment far fa-comment"></button>
+                  <button type="button" class="btn retweet fas fa-retweet"></button>
+                  <button type="button" class="btn like far fa-heart"></button>
+                  <button type="button" class="btn share fas fa-share-alt"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- trending page -->
+      <div class="layout__right-sidebar-container">
+        <div class="layout__right-sidebar" style="position: fixed"></div>
+        <div class="whats-happening">
+          <div class="whats-happening__block">
+            <div class="whats-happening__heading">What's happening</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__meta-information">Sports.LIVE</div>
+            <div class="whats-happening__trend-name">#CSKvsRCB</div>
+            <div class="whats-happening__meta-information">155k Tweets</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__meta-information">Politics</div>
+            <div class="whats-happening__trend-name">#ModiOxygenDo</div>
+            <div class="whats-happening__meta-information">155k Tweets</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__meta-information">Entertaintment</div>
+            <div class="whats-happening__trend-name">#BoycottBollywood</div>
+            <div class="whats-happening__meta-information">375k Tweets</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__meta-information">Trending in India</div>
+            <div class="whats-happening__trend-name">#IndiaFightsCorona</div>
+            <div class="whats-happening__meta-information">77.7k Tweets</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__meta-information">Covid 19</div>
+            <div class="whats-happening__trend-name">#Unite2FightCorona</div>
+            <div class="whats-happening__meta-information">577k Tweets</div>
+          </div>
+          <div class="whats-happening__block">
+            <div class="whats-happening__show-more">Show more</div>
+          </div>
+        </div>
+        <div class="who-to-follow">
+          <div class="who-to-follow__block">
+            <div class="who-to-follow__heading">Who to follow</div>
+          </div>
+          <div class="who-to-follow__block">
+            <img class="who-to-follow__author-logo" src="images/Chennai.jpg" />
+            <div class="who-to-follow__content">
+              <div>
+                <div class="who-to-follow__author-name">Chennai Super Kings</div>
+                <div class="who-to-follow__author-slug">@ChennaiIPL</div>
+              </div>
+              <button type="button" class="who-to-follow__button btn btn-outline-primary">Follow</button>
+            </div>
+          </div>
+          <div class="who-to-follow__block">
+            <img class="who-to-follow__author-logo" src="images/elon.jpg" />
+            <div class="who-to-follow__content">
+              <div>
+                <div class="who-to-follow__author-name">Elon Musk</div>
+                <div class="who-to-follow__author-slug">@elonmusk</div>
+              </div>
+              <button type="button" class="who-to-follow__button btn btn-outline-primary">Follow</button>
+            </div>
+          </div>
+          <div class="who-to-follow__block">
+            <img class="who-to-follow__author-logo" src="images/ratan tata.jpg" />
+            <div class="who-to-follow__content">
+              <div>
+                <div class="who-to-follow__author-name">Ratan N. Tata</div>
+                <div class="who-to-follow__author-slug">@RNTata2000</div>
+              </div>
+              <button type="button" class="who-to-follow__button btn btn-outline-primary">Follow</button>
+            </div>
+          </div>
+          <div class="who-to-follow__block">
+            <div class="who-to-follow__show-more">Show more</div>
+          </div>
+        </div>
+        <div class="topics-to-follow">
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__heading">Topics to follow</div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__content">
+              <div>
+                <div class="topics-to-follow__author-name">Arvind Kejrival</div>
+                <div class="topics-to-follow__author-slug">Politician</div>
+              </div>
+              <div class="topics-to-follow__button btn btn-outline-primary">Follow</div>
+            </div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__content">
+              <div>
+                <div class="topics-to-follow__author-name">Football</div>
+                <div class="topics-to-follow__author-slug">Sport</div>
+              </div>
+              <div class="topics-to-follow__button btn btn-outline-primary">Follow</div>
+            </div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__content">
+              <div>
+                <div class="topics-to-follow__author-name">Lionel Messi</div>
+                <div class="topics-to-follow__author-slug">Footballer</div>
+              </div>
+              <div class="topics-to-follow__button btn btn-outline-primary">Follow</div>
+            </div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__content">
+              <div>
+                <div class="topics-to-follow__author-name">Care India</div>
+                <div class="topics-to-follow__author-slug">NGO</div>
+              </div>
+              <div class="topics-to-follow__button btn btn-outline-primary">Follow</div>
+            </div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__content">
+              <div>
+                <div class="topics-to-follow__author-name">Indian Premier League</div>
+                <div class="topics-to-follow__author-slug">Cricket league</div>
+              </div>
+              <div class="topics-to-follow__button btn btn-outline-primary">Follow</div>
+            </div>
+          </div>
+          <div class="topics-to-follow__block">
+            <div class="topics-to-follow__show-more">Show more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
 
     <!-- javascripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-      crossorigin="anonymous"
-    ></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
