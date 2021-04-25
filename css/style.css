@@ -8,7 +8,7 @@
   --white: #ffffff;
 }
 
-body {
+.flex{
   display: flex;
   flex-wrap: nowrap;
   /* height: 100vh; */
@@ -41,7 +41,7 @@ body > * {
 
 .sidebar {
   height: -webkit-fill-available;
-  margin-left: 15%;
+  margin-left: 13%;
 }
 .sidebar .nav-link {
   margin-left: 3rem;
@@ -159,10 +159,23 @@ body > * {
   margin: 0 1.5rem;
 }
 
-/* trending page */
+/* trending section */
 .layout__right-sidebar-container {
   position: absolute;
-  margin-left: 70%;
+  margin-left: 72%;
+}
+
+
+
+
+/* login-signup */
+.login-bg-image{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png');
+  height: 95vh;
+  overflow-y: auto;
 }
 
 
@@ -171,7 +184,3 @@ body > * {
 
 
 
-
-.red{
-  background-color: red;
-}

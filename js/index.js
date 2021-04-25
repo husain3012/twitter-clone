@@ -13,47 +13,52 @@ var preTweet = `<div class="tweet-feed">
       <p>`;
 var postTweet = `</p>
 <div class="reactions">
-  <button type="button" class="btn far fa-comment"></button>
-  <button type="button" class="btn fas fa-retweet"></button>
-  <button type="button" class="btn far fa-heart"></button>
-  <button type="button" class="btn fas fa-share-alt"></button>
-</div>
+<button type="button" class="btn comment far fa-comment"></button>
+<button type="button" class="btn retweet fas fa-retweet"></button>
+ <button type="button" class="btn like far fa-heart"></button>
+ <button type="button" class="btn share fas fa-share-alt"></button>
+ </div>
 </div>
 </div>
 </div>
 </div>`;
+
 function postTweetFeed(tweet) {
   $("#postbox").after(preTweet + tweet + postTweet);
   tweet = "";
+
 }
 
-function loadTweet(data){
-    $(".feed").append(preTweet + data + postTweet);
+function loadTweet(data) {
+  $(".feed").append(preTweet + data + postTweet);
 
 }
 
 $(".post-input").keydown(function (e) {
+  //place holder text
   $(".post-input").removeClass("placeholder");
 });
 
 $(".post-tweet").click(function (e) {
+  //posting tweet
   tweet = $(".post-input").text();
   $(".post-input").empty();
   postTweetFeed(tweet);
 });
 
+//reaction buttons
 $(".reactions .like").click(function (e) {
-  this.classList.toggle("liked");
-  this.classList.toggle("fas");
+  $(this).toggleClass("fas far liked");
 });
 
+// infinte scroll
 $(window).scroll(function () {
   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
     loadTweet(sentence());
   }
 });
 
-// random tweet generation
+// random sentence generation
 
 var verbs, nouns, adjectives, adverbs, preposition;
 nouns = ["bird", "clock", "boy", "plastic", "duck", "teacher", "old lady", "professor", "hamster", "dog"];
