@@ -1,7 +1,7 @@
 :root {
   --blue: #1da1f2;
   --black: #14171a;
-  --dark: #657786;
+  --dark-grey: #657786;
   --grey: #aab8c2;
   --light-grey: #e1e8ed;
   --extra-light-grey: #f5f8fa;
@@ -67,7 +67,6 @@ body > * {
   border-color: var(--light-grey);
   margin: 0 auto;
   width: 66ch;
-  height: 2000px;
 }
 
 .feed .nav {
@@ -99,38 +98,80 @@ body > * {
   border-width: 1px;
   border-color: var(--light-grey);
 }
-
-.post-methods{
+.placeholder {
+  color: var(--dark-grey);
+}
+.post-methods {
   padding: 0.5rem;
 }
-.attachments .btn{
+.attachments .btn {
   color: var(--blue);
   font-size: 1.3rem;
   padding: 0.5rem;
 }
 
 
+.reactions button.comment:hover{
+  color: #1da1f2;
+  text-shadow: 5px 5px #92d2fa;
+  transition: 0.2s;
+}
+.reactions button.retweet:hover{
+  color: rgba(130, 255, 130, 0.712);
+  transition: 0.2s;
+}
+
+.reactions button.like:hover{
+  color: rgba(230, 112, 112, 0.856);
+  transition: 0.2s;
+}
+.reactions button.share:hover{
+  color: #1da1f2;
+  transition: 0.2s;
+}
+.reactions button.liked{
+  color: rgb(230, 78, 78);
+  transition: 0.2s;
+}
+
 /* tweet posts css */
-.tweet-header .profile-name{
+.tweet-header .profile-name {
   font-weight: bolder;
 }
-.tweet-header .username{
+.tweet-header .username {
   color: grey;
 }
-.tweet-feed{
+.tweet-feed {
   padding: 1rem;
   border-style: solid none;
   border-width: 1px;
   border-color: var(--light-grey);
   transition: 0.2s;
 }
-.tweet-feed:hover{
+.tweet-feed:hover {
   background-color: var(--extra-light-grey);
   transition: 0.2s;
 }
-.tweet{
+.tweet {
   padding: 0 1rem;
 }
 .tweet-feed .reactions .btn {
   margin: 0 1.5rem;
+}
+
+/* trending page */
+.layout__right-sidebar-container {
+  position: absolute;
+  margin-left: 70%;
+}
+
+
+
+
+
+
+
+
+.red{
+  background-color: red;
 }
