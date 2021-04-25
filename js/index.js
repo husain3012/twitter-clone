@@ -23,21 +23,33 @@ var postTweet = `</p>
 </div>
 </div>`;
 
+function likeEventListner(){
+  $(".reactions .like").off();
+  $(".reactions .like").click(function (e) {
+    $(this).toggleClass("fas far liked");
+  });
+}
 function postTweetFeed(tweet) {
-  $("#postbox").after(preTweet + tweet + postTweet);
+  var posting = preTweet + tweet + postTweet;
+  $("#postbox").after(posting);
+  likeEventListner();
   tweet = "";
 
 }
 
 function loadTweet(data) {
   $(".feed").append(preTweet + data + postTweet);
-
+likeEventListner();
 }
 
+
+
+likeEventListner();
 $(".post-input").keydown(function (e) {
   //place holder text
   $(".post-input").removeClass("placeholder");
 });
+
 
 $(".post-tweet").click(function (e) {
   //posting tweet
@@ -47,9 +59,7 @@ $(".post-tweet").click(function (e) {
 });
 
 //reaction buttons
-$(".reactions .like").click(function (e) {
-  $(this).toggleClass("fas far liked");
-});
+
 
 // infinte scroll
 $(window).scroll(function () {

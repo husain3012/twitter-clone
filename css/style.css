@@ -112,7 +112,6 @@ body > * {
 
 .reactions button.comment:hover {
   color: #1da1f2;
-  text-shadow: 5px 5px #92d2fa;
   transition: 0.2s;
 }
 .reactions button.retweet:hover {
