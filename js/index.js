@@ -58,6 +58,15 @@ $(window).scroll(function () {
   }
 });
 
+
+$(".login-panel button").click(function(){
+  console.log($("#password").text);
+});
+
+
+
+
+
 // random sentence generation
 
 var verbs, nouns, adjectives, adverbs, preposition;
