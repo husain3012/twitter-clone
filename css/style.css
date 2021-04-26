@@ -42,10 +42,32 @@ body > * {
 .sidebar {
   height: -webkit-fill-available;
   margin-left: 13%;
+  
 }
-.sidebar .nav-link {
+.sidebar .nav-link{
+  font-weight: bold;
   margin-left: 3rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+
 }
+.sidebar .nav-link.link-dark:hover{
+  color: var(--blue);
+  background-color: #d3eeffb2;
+
+
+}
+
+.sidebar .nav-link.active{
+  color: var(--blue);
+}
+
+.sidebar .nav-link i{
+  margin-right: 1rem;
+}
+
+
 .fa-twitter {
   color: var(--blue);
 }
@@ -53,10 +75,31 @@ body > * {
   margin-left: 3rem;
   padding: 0 1rem;
 }
-.btn.btn-primary {
+.nav-link .btn.btn-primary {
   background-color: var(--blue);
   border: none;
+  width: 100%;
   border-radius: 20px;
+}
+
+.dropdown a.dropdown-toggle{
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  
+}
+.dropdown .dropdown-toggle:hover{
+  background-color:#d3eeffb2;
+}
+
+ul.dropdown-menu{
+  border-radius: 20px;
+  padding: 1rem;
+
+}
+ul.dropdown-menu a{
+  margin: 0 2rem;
 }
 
 /* sidebar end */
@@ -78,6 +121,12 @@ body > * {
 }
 #postbox {
   padding: 1rem;
+}
+
+.btn.btn-primary{
+  background-color: var(--blue);
+  border: none;
+  border-radius: 20px;
 }
 .photo-holder {
   height: max-content;
@@ -239,3 +288,7 @@ font-size: 4.5rem;
 .login-signup button.btn-outline-primary:hover{
   background-color: rgba(134, 197, 233, 0.616);
 }
+
+
+
+
