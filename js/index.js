@@ -23,7 +23,7 @@ var postTweet = `</p>
 </div>
 </div>`;
 
-function likeEventListner(){
+function likeEventListner() {
   $(".reactions .like").off();
   $(".reactions .like").click(function (e) {
     $(this).toggleClass("fas far liked");
@@ -34,22 +34,28 @@ function postTweetFeed(tweet) {
   $("#postbox").after(posting);
   likeEventListner();
   tweet = "";
-
 }
 
 function loadTweet(data) {
   $(".feed").append(preTweet + data + postTweet);
-likeEventListner();
+  likeEventListner();
 }
 
 
-
+// tweet character counter
 likeEventListner();
 $(".post-input").keydown(function (e) {
-  //place holder text
   $(".post-input").removeClass("placeholder");
+  var charRemaining = 280 - ($(".post-input").text()).length;
+  $("#char-counter").text("");
+$("#char-counter").append(charRemaining);
+if(charRemaining < 0){
+  $("#char-counter").css("color", "red");
+}
+else{
+  $("#char-counter").css("color", "");
+}
 });
-
 
 $(".post-tweet").click(function (e) {
   //posting tweet
@@ -60,7 +66,6 @@ $(".post-tweet").click(function (e) {
 
 //reaction buttons
 
-
 // infinte scroll
 $(window).scroll(function () {
   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -68,14 +73,9 @@ $(window).scroll(function () {
   }
 });
 
-
-$(".login-panel button").click(function(){
+$(".login-panel button").click(function () {
   console.log($("#password").text);
 });
-
-
-
-
 
 // random sentence generation
 

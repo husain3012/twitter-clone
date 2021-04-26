@@ -8,6 +8,7 @@
   --white: #ffffff;
 }
 
+
 .flex {
   display: flex;
   flex-wrap: nowrap;
@@ -123,6 +124,10 @@ ul.dropdown-menu a{
   padding: 1rem;
 }
 
+#char-counter{
+  color: var(--blue);
+margin-left: 35%;
+}
 .btn.btn-primary{
   background-color: var(--blue);
   border: none;
@@ -292,3 +297,4 @@ font-size: 4.5rem;
 
 
 
+/* profile page css */
